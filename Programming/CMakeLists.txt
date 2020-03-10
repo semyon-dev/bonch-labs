@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.15)
+project(LABS C)
+set(CMAKE_C_STANDARD 11)
+add_executable(LABS 9 9/lab9.c)
+target_link_libraries(LABS m)
