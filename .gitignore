@@ -53,6 +53,4 @@ dkms.conf
 
 # Other
 .idea
-Programming/cmake-build-debug
-MDPL/cmake-build-debug
-
+cmake-build-debug
