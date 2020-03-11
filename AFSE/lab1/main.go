@@ -21,12 +21,14 @@ func main() {
 		fmt.Println("Неправильный формат данных!")
 		os.Exit(0)
 	}
-	if a == 0 && b == 0 && c == 0 && d == 0 {
-		fmt.Println("x - любое")
-		os.Exit(0)
-	} else if a == 0 && b == 0 && c == 0 && d != 0 {
-		fmt.Println("нет решений")
-		os.Exit(0)
+	if a == 0 && b == 0 && c == 0 {
+		if d == 0 {
+			fmt.Println("x - любое")
+			os.Exit(0)
+		} else if d != 0 {
+			fmt.Println("нет решений")
+			os.Exit(0)
+		}
 	}
 	fmt.Println("Введите x1, x2") // начальное приближение x1, начальное приближение x2
 	_, err = fmt.Scan(&x1, &x2)
