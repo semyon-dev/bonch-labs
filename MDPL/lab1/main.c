@@ -1,18 +1,21 @@
 #include <stdio.h>
 
-extern int _somefunc();
+extern int mainA();
 
-__uint8_t a;
+__uint8_t a, b, c;
+__int16_t chisl, znam, res;
 
 int main() {
-    // (-74/a+c-5)/(1+c*b/2)
+
     scanf("%hhu", &a);
-//    scanf("%i", &b);
-//    scanf("%i", &c);
+    scanf("%hhu", &b);
+    scanf("%hhu", &c);
 
-    _somefunc();
+    mainA();
 
-    printf("a: %hhu \n", a);
-    //printf("RES: %i \n", res);
+    printf("числ: %hd \n", chisl);
+    printf("знам: %hd \n", znam);
+    printf("результат: %hd \n", res);
+
     return 0;
 }
