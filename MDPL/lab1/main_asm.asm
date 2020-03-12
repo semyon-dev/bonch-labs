@@ -21,8 +21,9 @@ mainA:
 	mov bx, 0
 
 ; -74/a
-	mov al, [a]
-	mov bx, -74d
+	mov ax, -74d
+	mov bx, [a]
+	cwd
 	idiv bx
     mov [chisl], ax
 
@@ -60,12 +61,12 @@ mainA:
 ; chisl/znam
 ;
     mov ax, 0
-    mov dx, 0
     mov bx, 0
-    mov al, 0
+    mov dx, 0
 
-    mov al, [chisl]
-    mov bl, [znam]
+    mov ax, [chisl]
+    mov bx, [znam]
+    cwd
     idiv bx
     mov [res], ax
 
