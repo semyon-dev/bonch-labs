@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
-project(MDPL C)
+project(MDPL C ASM)
 set(CMAKE_C_STANDARD 11)
-add_executable(MDPL lab1 lab1/main.c)
+add_executable(MDPL lab1/main.c lab1/main_asm.asm)
 target_link_libraries(MDPL m)

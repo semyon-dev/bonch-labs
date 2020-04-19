@@ -20,8 +20,8 @@ __uint8_t choose;
 
 void check(__int16_t a, __int16_t b, __int16_t c) {
     // (-74/a+c-5)/(1+c*b/2)
-    chislC = ((-74 / a) + c - 5);
-    znamC = (1 + c * b / 2);
+    chislC = (int) ((-74 / a) + c - 5);
+    znamC = (int) (1 + c * (b / 2));
     resC = chislC / znamC;
 }
 
