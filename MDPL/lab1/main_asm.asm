@@ -17,11 +17,11 @@ int8:
     push bx
 
 ; --- числитель ---
-	mov ax, 0
-	mov dx, 0
-	mov bx, 0
-	mov al, 0
-	mov dl, 0
+	xor ax, ax
+	xor dx, dx
+	xor bx, bx
+	xor al, al
+	xor dl, dl
 
     ;-74/a
 	mov ax, -74d        ; -74 -> ax
@@ -33,9 +33,9 @@ int8:
     mov [chisl], ax
 
    ;+c
-    mov bx, 0
-    mov al, 0
-    mov ax, 0
+    xor bx, bx
+    xor al, al
+    xor ax, ax
 
     mov bx, [chisl]
     mov al, [c8int]
@@ -49,10 +49,10 @@ int8:
 
 ; ----- знаменатель ------
 ; b/2
-    mov ax, 0
-   	mov dx, 0
-   	mov bx, 0
-   	mov al, 0
+    xor ax, ax
+   	xor dx, dx
+   	xor bx, bx
+   	xor al, al
 
 	mov al, [b8int]
 	cbw   ; (cbw конвертирует al -> ax)
@@ -64,7 +64,7 @@ int8:
     mov [znam], ax
 
  ; c*
-    mov ax, 0
+    xor ax, ax
     mov bx, [znam]
 	mov al, [c8int]
 	cbw ; (cbw конвертирует al -> ax)
@@ -79,9 +79,9 @@ int8:
 ; ------ деление (результат) ------
 ; chisl/znam
 ;
-    mov ax, 0
-    mov bx, 0
-    mov dx, 0
+    xor ax, ax
+    xor bx, bx
+    xor dx, dx
 
     mov ax, [chisl]
     mov bx, [znam]
@@ -101,9 +101,9 @@ uint8:
     push bx
 
 ; --- числитель ---
-	mov ax, 0
-	mov dx, 0
-	mov bx, 0
+	xor ax, ax
+	xor dx, dx
+	xor bx, bx
 
 ; -74/a
 	mov ax, -74d
@@ -113,7 +113,7 @@ uint8:
     mov [chisl], ax
 
 ; +c
-    mov bx, 0
+    xor bx, bx
     mov bl, [cu8]
     add ax, bx
     mov [chisl], ax
@@ -124,9 +124,9 @@ uint8:
 
 ; ----- знаменатель ------
 ; b/2
-    mov ax, 0
-   	mov dx, 0
-   	mov bx, 0
+    xor ax, ax
+   	xor dx, dx
+   	xor bx, bx
 
 	mov al, [bu8]
 	mov bx, 2d
@@ -134,7 +134,7 @@ uint8:
     mov [znam], ax
 
 ; c*
-    mov ax, 0
+    xor ax, ax
     mov bx, [znam]
     mov al, [cu8]
     cbw ; (cbw конвертирует al -> ax)
@@ -149,9 +149,9 @@ uint8:
 ; ------ деление (результат) ------
 ; chisl/znam
 ;
-    mov ax, 0
-    mov bx, 0
-    mov dx, 0
+    xor ax, ax
+    xor bx, bx
+    xor dx, dx
 
     mov ax, [chisl]
     mov bx, [znam]
@@ -171,9 +171,9 @@ uint16:
     push bx
 
 ; --- числитель ---
-	mov ax, 0
-	mov dx, 0
-	mov bx, 0
+	xor ax, ax
+	xor dx, dx
+	xor bx, bx
 
 ; -74/a
 	mov ax, -74d
@@ -183,7 +183,7 @@ uint16:
     mov [chisl], ax
 
 ; +c
-    mov bx, 0
+    xor bx, bx
     mov bl, [cu16]
     add ax, bx
     mov [chisl], ax
@@ -194,9 +194,9 @@ uint16:
 
 ; ----- знаменатель ------
 ; b/2
-    mov ax, 0
-   	mov dx, 0
-   	mov bx, 0
+    xor ax, ax
+   	xor dx, dx
+   	xor bx, bx
 
     mov bx, 2d
     mov ax, [bu16]
@@ -209,7 +209,7 @@ uint16:
     mov [znam], ax
 
 ; c*
-   	mov bx, 0
+   	xor bx, bx
 	mov bx, [cu16]
     imul bx
     mov [znam], ax
@@ -221,9 +221,9 @@ uint16:
 ; ------ деление (результат) ------
 ; chisl/znam
 ;
-    mov ax, 0
-    mov bx, 0
-    mov dx, 0
+    xor ax, ax
+    xor bx, bx
+    xor dx, dx
 
     mov ax, [chisl]
     mov bx, [znam]
@@ -243,9 +243,9 @@ int16:
     push bx
 
 ; --- числитель ---
-	mov ax, 0
-	mov dx, 0
-	mov bx, 0
+	xor ax, ax
+	xor dx, dx
+	xor bx, bx
 
 ; -74/a
 	mov ax, -74d
@@ -259,7 +259,7 @@ int16:
     mov [chisl], ax
 
 ; +c
-    mov bx, 0
+    xor bx, bx
     mov bx, [c16int]
     add ax, bx
     mov [chisl], ax
@@ -270,9 +270,9 @@ int16:
 
 ; ----- знаменатель ------
 ; b/2
-    mov ax, 0
-   	mov dx, 0
-   	mov bx, 0
+    xor ax, ax
+   	xor dx, dx
+   	xor bx, bx
 
 	mov bx, 2d
 	mov ax, [b16int]
@@ -285,7 +285,7 @@ int16:
     mov [znam], ax
 
     ; c*
-   	mov bx, 0
+   	xor bx, bx
 	mov bx, [c16int]
     imul bx
     mov [znam], ax
@@ -298,9 +298,9 @@ int16:
 
     ;chisl/znam
 
-    mov ax, 0
-    mov bx, 0
-    mov dx, 0
+    xor ax, ax
+    xor bx, bx
+    xor dx, dx
 
     mov ax, [chisl]
     mov bx, [znam]
