@@ -1,3 +1,5 @@
+// Расчет (-74/a+c-5)/(1+c*b/2) через си и asm (nasm)
+
 #include <stdio.h>
 
 extern int int8();
@@ -18,11 +20,11 @@ __int16_t chislC, znamC, resC;
 
 __uint8_t choose;
 
+// подсчет через си для дальнейшей проверки
 void check(__int16_t a, __int16_t b, __int16_t c) {
-    // (-74/a+c-5)/(1+c*b/2)
     chislC = (int) ((-74 / a) + c - 5);
     znamC = (int) (1 + c * (b / 2));
-    resC = chislC / znamC;
+    resC = (int) (chislC / znamC);
 }
 
 int main() {
@@ -34,6 +36,7 @@ int main() {
     printf("2 - uint8 \n");
     printf("3 - int16 \n");
     printf("4 - uint16 \n");
+    printf("-----------------------------\n");
 
     scanf("%hhu", &choose);
 
@@ -77,10 +80,17 @@ int main() {
     printf("Числитель: %hi \n", chisl);
     printf("Знаменатель: %hi \n", znam);
     printf("Результат: %hi \n", res);
+    printf("-----------------------------\n");
     printf("Проверка через си: \n");
     printf("Числитель: %hi \n", chislC);
     printf("Знаменатель: %hi \n", znamC);
     printf("Результат: %hi \n", resC);
+    printf("-----------------------------\n");
+    if (resC != res) {
+        printf("Результаты не совпали! \n");
+    } else {
+        printf("Результаты совпали! \n");
+    }
 
     return 0;
 }

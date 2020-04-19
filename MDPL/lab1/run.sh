@@ -2,7 +2,7 @@
 echo 'Под какую архитектуру скомпилировать и запустить?'
 echo '1 - 32bit'
 echo '2 - 64bit'
-echo '-------------'
+echo '-----------------------------'
 read choice
 case ${choice} in
     1)
@@ -11,7 +11,7 @@ case ${choice} in
         gcc -m32 main.o main_asm.o -o bin32
         rm main.o main_asm.o
         ./bin32
-        echo '-------------'
+        echo '-----------------------------'
         echo 'Скомпилированный бинарник: bin32'
         ;;
     2)
@@ -20,7 +20,7 @@ case ${choice} in
         gcc -no-pie -m64 main.o main_asm.o -o bin64
         rm main.o main_asm.o
         ./bin64
-        echo '-------------'
+        echo '-----------------------------'
         echo 'Скомпилированный бинарник: bin64'
         ;;
     *)
