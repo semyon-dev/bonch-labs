@@ -40,7 +40,7 @@ int main() {
 
     scanf("%hhu", &choose);
 
-    printf("Теперь введите a,b,c: \n");
+    printf("Теперь введите a,b,c: (через пробелы)\n");
 
     switch (choose) {
         case 1:
