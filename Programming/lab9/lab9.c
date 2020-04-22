@@ -1,3 +1,5 @@
+// Удалить из каждой строки ее предпоследнее слово.
+
 #include <stdio.h>
 #include <string.h>
 
@@ -17,6 +19,7 @@ void input() {
 }
 
 int main() {
+    setbuf(stdout, NULL);
     input();
     char strRes[max];
     for (int i = 0; i < row; i++) {
