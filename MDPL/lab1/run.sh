@@ -10,7 +10,7 @@ case ${choice} in
         nasm -f elf main_asm.asm -o main_asm.o
         gcc -m32 main.o main_asm.o -o bin32
         rm main.o main_asm.o
-        ./bin32
+        ${PWD}/bin32
         echo '-----------------------------'
         echo 'Скомпилированный бинарник: bin32'
         ;;
@@ -19,7 +19,7 @@ case ${choice} in
         nasm -f elf64 main_asm.asm -o main_asm.o
         gcc -no-pie -m64 main.o main_asm.o -o bin64
         rm main.o main_asm.o
-        ./bin64
+        ${PWD}/bin64
         echo '-----------------------------'
         echo 'Скомпилированный бинарник: bin64'
         ;;
