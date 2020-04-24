@@ -26,10 +26,10 @@ struct film films[count]; // массив фильмов
 
 // функция ввода фильтров
 void inputFilters() {
-    printf("Введите genre для фильтра \n");
+    printf("Введите жанр для фильтра \n");
     scanf("%s", filter_genre);
 
-    printf("Введите country для фильтра \n");
+    printf("Введите страну для фильтра \n");
     scanf("%s", filter_country);
 }
 
@@ -39,19 +39,19 @@ void input() {
 
         printf("Ввод структуры номер: %i \n", i);
 
-        printf("Введите name \n");
+        printf("Введите название \n");
         scanf("%s", films[i].name);
 
-        printf("Введите country \n");
+        printf("Введите страну \n");
         scanf("%s", films[i].country);
 
-        printf("Введите director \n");
+        printf("Введите режиссера \n");
         scanf("%s", films[i].director);
 
-        printf("Введите genre \n");
+        printf("Введите жанр \n");
         scanf("%s", films[i].genre);
 
-        printf("Введите year \n");
+        printf("Введите год \n");
         scanf("%i", &films[i].year);
     }
 }
