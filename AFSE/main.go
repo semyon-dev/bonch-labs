@@ -69,7 +69,7 @@ func main() {
 	case 2:
 		tangents() // метод касательныx
 	case 3:
-		compatible(a1, b1)
+		compatible()
 	default:
 		fmt.Println("Такого метода нет!")
 	}
@@ -111,7 +111,10 @@ func secant() {
 }
 
 // метод комбинированный метод хорд и касательных
-func compatible(a, b float64) float64 { // функция вычисляет по методу хорд и касательных
+func compatible() float64 { // функция вычисляет по методу хорд и касательных
+	var a, b float64
+	a = a1
+	b = b1
 	var k int
 	for ; math.Abs(b-a) > E*2; { //Построение хорд и касательных продолжается до достижения необходимой точности решения е
 		if f(a)*fp2(a) < 0 {
