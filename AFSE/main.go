@@ -8,6 +8,7 @@ import (
 
 var a, b, c, d float64
 var a1, b1, x float64
+var k int
 
 var E = 0.01 // погрешность
 
@@ -17,14 +18,22 @@ func f(x float64) float64 {
 }
 
 // производная от уравнения
-func fp(x float64) float64 {
+func fp1(x float64) float64 {
 	return 3*a*math.Pow(x, 2) + 2*b*x + c
 }
 
+// производная от уравнения
+func fp2(x float64) float64 {
+	return 6*a*x + 2*b
+}
+
 func main() {
-	fmt.Println("выберите метод решения")
-	fmt.Println("метод секущих - 0")
-	fmt.Println("метод касательных - 1")
+	fmt.Println("------------------------------------------------------")
+	fmt.Println("Выберите метод решения:")
+	fmt.Println("1 - метод секущих")
+	fmt.Println("2 - метод касательных")
+	fmt.Println("3 - метод комбинированный метод хорд и касательных")
+	fmt.Println("------------------------------------------------------")
 	var method int
 	fmt.Scan(&method)
 	fmt.Println("Введите a,b,c,d")
@@ -57,10 +66,12 @@ func main() {
 	}
 
 	switch method {
-	case 0:
-		secant() // метод секущих
 	case 1:
+		secant() // метод секущих
+	case 2:
 		tangents() // метод касательныx
+	case 3:
+		compatible(a1, b1)
 	default:
 		fmt.Println("Такого метода нет!")
 	}
@@ -76,7 +87,7 @@ func Newton(x0, epsilon float64) float64 {
 	f0 := f(x0)
 	x := x0
 	for math.Abs(f(x)) > epsilon {
-		x -= f0 / fp(x)
+		x -= f0 / fp1(x)
 		f0 = f(x)
 	}
 	return x
@@ -102,4 +113,24 @@ func secant() {
 		fmt.Println("Ответ:", xN)
 		fmt.Println("Найден на итерации номер", n)
 	}
+}
+
+// метод комбинированный метод хорд и касательных
+func compatible(a, b float64) float64 { // функция вычисляет по методу хорд и касательных
+	for ; math.Abs(b-a) > E*2; {
+		if f(a)*fp2(a) < 0 {
+			a += (b - a) / (f(a) - f(b)) * f(a)
+		} else {
+			a -= f(a) / fp1(a)
+		}
+		if f(b)*fp2(b) < 0 {
+			b += (a - b) / (f(b) - f(a)) * f(b)
+		} else {
+			b -= f(b) / fp1(b)
+		}
+		k++
+		//Построение хорд и касательных продолжается до достижения необходимой точности решения е
+	}
+	fmt.Println("Ответ:", (a+b)/2.0)
+	return (a + b) / 2.0
 }
