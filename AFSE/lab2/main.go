@@ -8,7 +8,7 @@ import (
 )
 
 var a, b, c, d float64
-var a1, b1, x float64
+var a1, b1 float64
 
 var E = 0.01 // погрешность
 
@@ -29,16 +29,16 @@ func fp2(x float64) float64 {
 
 func main() {
 	fmt.Println("------------------------------------------------------")
-	fmt.Println("Выберите метод решения:")
+	//fmt.Println("Выберите метод решения:")
 	fmt.Println("1 - метод секущих")
 	fmt.Println("2 - метод касательных")
 	fmt.Println("3 - метод комбинированный метод хорд и касательных")
 	fmt.Println("------------------------------------------------------")
-	var method int
-	_, err := fmt.Scan(&method)
-	checkErr(err, "Ошибка при вводе метода!")
+	//var method int
+	//_, err := fmt.Scan(&method)
+	//checkErr(err, "Ошибка при вводе метода!")
 	fmt.Println("Введите a,b,c,d")
-	_, err = fmt.Scan(&a, &b, &c, &d)
+	_, err := fmt.Scan(&a, &b, &c, &d)
 	checkErr(err, "Неправильный формат данных!")
 	if a == 0 && b == 0 && c == 0 {
 		if d == 0 {
@@ -54,42 +54,40 @@ func main() {
 	_, err = fmt.Scan(&a1, &b1)
 	checkErr(err, "Неправильный формат отрезка!")
 	if a1 > b1 {
-		checkErr(errors.New("Неверно указан интервал поиска"), "")
+		checkErr(errors.New("неверно указан интервал поиска"), "")
 	}
 	fmt.Println("Введите значение погрешности")
 	_, err = fmt.Scan(&E)
 	checkErr(err, "Неправильный формат погрешности!")
 	if E < 0 {
-		checkErr(errors.New("Значение погрешности должно быть положительным!"), "")
+		checkErr(errors.New("значение погрешности должно быть положительным"), "")
 	}
 
-	switch method {
-	case 1:
-		secant() // метод секущих
-	case 2:
-		tangents() // метод касательныx
-	case 3:
-		compatible()
-	default:
-		fmt.Println("Такого метода нет!")
-	}
+	chan1 := make(chan float64, 3)
+
+	go secant(chan1) // метод секущих
+	fmt.Println("метод секущих: ", <-chan1)
+	go tangents(chan1) // метод касательныx
+	fmt.Println("метод касательныx: ", <-chan1)
+	go compatible(chan1) // комбинированный метод
+	fmt.Println("комбинированный метод: ", <-chan1)
 }
 
 // метод касательных (Ньютона)
-func tangents() {
+func tangents(c chan float64) {
+	var x float64
 	x0 := x
-	x = b1
 	f0 := f(x0)
-	x := x0
+	x = x0
 	for math.Abs(f(x)) > E {
 		x -= f0 / fp1(x)
 		f0 = f(x)
 	}
-	fmt.Println("Ответ: ", x)
+	c <- x
 }
 
 // метод секущих
-func secant() {
+func secant(c chan float64) {
 	var y, xN float64
 	var n = 0
 	for {
@@ -104,14 +102,12 @@ func secant() {
 	}
 	if math.IsNaN(xN) {
 		fmt.Println("Не получилось посчитать, возможно мы вышли за допустимые пределы")
-	} else {
-		fmt.Println("Ответ:", xN)
-		fmt.Println("Найден на итерации номер", n)
 	}
+	c <- xN
 }
 
 // метод комбинированный метод хорд и касательных
-func compatible() float64 { // функция вычисляет по методу хорд и касательных
+func compatible(c chan float64) { // функция вычисляет по методу хорд и касательных
 	var a, b float64
 	a = a1
 	b = b1
@@ -129,8 +125,7 @@ func compatible() float64 { // функция вычисляет по метод
 		}
 		k++
 	}
-	fmt.Println("Ответ:", (a+b)/2.0)
-	return (a + b) / 2.0
+	c <- (a + b) / 2.0
 }
 
 func checkErr(err error, toPrint string) {
