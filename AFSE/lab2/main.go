@@ -29,14 +29,10 @@ func fp2(x float64) float64 {
 
 func main() {
 	fmt.Println("------------------------------------------------------")
-	//fmt.Println("Выберите метод решения:")
 	fmt.Println("1 - метод секущих")
 	fmt.Println("2 - метод касательных")
 	fmt.Println("3 - метод комбинированный метод хорд и касательных")
 	fmt.Println("------------------------------------------------------")
-	//var method int
-	//_, err := fmt.Scan(&method)
-	//checkErr(err, "Ошибка при вводе метода!")
 	fmt.Println("Введите a,b,c,d")
 	_, err := fmt.Scan(&a, &b, &c, &d)
 	checkErr(err, "Неправильный формат данных!")
@@ -65,12 +61,17 @@ func main() {
 
 	chan1 := make(chan float64, 3)
 
-	go secant(chan1) // метод секущих
-	fmt.Println("метод секущих: ", <-chan1)
-	go tangents(chan1) // метод касательныx
-	fmt.Println("метод касательныx: ", <-chan1)
+	go secant(chan1)     // метод секущих
+	go tangents(chan1)   // метод касательныx
 	go compatible(chan1) // комбинированный метод
-	fmt.Println("комбинированный метод: ", <-chan1)
+
+	fmt.Println(<-chan1)
+	fmt.Println(<-chan1)
+	fmt.Println(<-chan1)
+
+	//fmt.Println("метод секущих: ", <-chan1)
+	//fmt.Println("метод касательныx: ", <-chan1)
+	//fmt.Println("комбинированный метод: ", <-chan1)
 }
 
 // метод касательных (Ньютона)
@@ -84,18 +85,21 @@ func tangents(c chan float64) {
 		f0 = f(x)
 	}
 	c <- x
+	fmt.Println("метод касательных выполнился")
 }
 
 // метод секущих
 func secant(c chan float64) {
 	var y, xN float64
 	var n = 0
+	var a11 = a1
+	var b11 = b1
 	for {
 		n++
 		y = xN
-		xN = b1 - ((b1-a1)/(f(b1)-f(a1)))*f(b1)
-		a1 = b1
-		b1 = xN
+		xN = b11 - ((b11-a11)/(f(b11)-f(a11)))*f(b11)
+		a11 = b11
+		b11 = xN
 		if !(math.Abs(y-xN) >= E) {
 			break
 		}
@@ -104,6 +108,7 @@ func secant(c chan float64) {
 		fmt.Println("Не получилось посчитать, возможно мы вышли за допустимые пределы")
 	}
 	c <- xN
+	fmt.Println("метод секущих выполнился")
 }
 
 // метод комбинированный метод хорд и касательных
@@ -126,6 +131,7 @@ func compatible(c chan float64) { // функция вычисляет по ме
 		k++
 	}
 	c <- (a + b) / 2.0
+	fmt.Println("метод комбинированный выполнился")
 }
 
 func checkErr(err error, toPrint string) {
