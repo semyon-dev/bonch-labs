@@ -28,6 +28,7 @@ func fp2(x float64) float64 {
 }
 
 func main() {
+
 	fmt.Println("------------------------------------------------------")
 	fmt.Println("1 - метод секущих")
 	fmt.Println("2 - метод касательных")
@@ -61,17 +62,12 @@ func main() {
 
 	chan1 := make(chan float64, 3)
 
-	go secant(chan1)     // метод секущих
-	go tangents(chan1)   // метод касательныx
+	go secant(chan1) // метод секущих
+	fmt.Println("метод секущих: ", <-chan1)
+	go tangents(chan1) // метод касательныx
+	fmt.Println("метод касательныx: ", <-chan1)
 	go compatible(chan1) // комбинированный метод
-
-	fmt.Println(<-chan1)
-	fmt.Println(<-chan1)
-	fmt.Println(<-chan1)
-
-	//fmt.Println("метод секущих: ", <-chan1)
-	//fmt.Println("метод касательныx: ", <-chan1)
-	//fmt.Println("комбинированный метод: ", <-chan1)
+	fmt.Println("комбинированный метод: ", <-chan1)
 }
 
 // метод касательных (Ньютона)
