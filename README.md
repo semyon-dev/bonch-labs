@@ -1,13 +1,13 @@
 # Bonch labs
 My labs from Bonch (SPBGUT)
 
-## Disciplines
-* MDPL (Machine-dependent programming languages)
-* AFSE (Algorithmic foundations of software engineering)
-* Programming
+## Disciplines (предметы)
+* MDPL - Machine-dependent programming languages (Машинно-зависимые языки программирования)
+* AFSE - Algorithmic foundations of software engineering (Алгоритмические основы программной инженерии)
+* Programming (Программирование)
 
 ## Variant
-17
+Все лабы сделаны по 17 вариантам
 
 ## License.
 This labs are distributed under [Unlicense license](https://github.com/semyon-dev/bonch-labs/blob/master/LICENSE).
