@@ -1,9 +1,16 @@
 #!/bin/bash
+echo 'Какую лабу запусить?'
+echo 'Доступны: 1, 2'
+echo '-----------------------------'
+read lab_number
+cd "lab$lab_number"
+echo '-----------------------------'
 echo 'Под какую архитектуру скомпилировать и запустить?'
-echo '1 - 32bit'
+echo '1 - 32bit (только 1 лаба)'
 echo '2 - 64bit'
 echo '-----------------------------'
 read choice
+echo '-----------------------------'
 case ${choice} in
     1)
         gcc -m32 -fPIE main.c -c -o main.o
