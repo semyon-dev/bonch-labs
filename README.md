@@ -7,7 +7,7 @@ My labs from Bonch (SPBGUT)
 * Programming (Программирование)
 
 ## Variant
-Все лабы сделаны по 17 вариантам
+Все лабы сделаны для 17 варианта
 
 ## License.
 This labs are distributed under [Unlicense license](https://github.com/semyon-dev/bonch-labs/blob/master/LICENSE).
