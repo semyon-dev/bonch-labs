@@ -4,6 +4,7 @@ set(CMAKE_C_STANDARD 11)
 set(CMAKE_ASM_NASM_OBJECT_FORMAT elf64)
 enable_language(ASM_NASM)
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -no-pie")
+# 2 лаба:
 set_source_files_properties(lab2/main_asm.asm PROPERTIES LANGUAGE ASM_NASM)
 add_executable(MDPL lab2/main.c lab2/main_asm.asm)
 target_link_libraries(MDPL m)
