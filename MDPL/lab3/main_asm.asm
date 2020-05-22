@@ -1,6 +1,9 @@
 ; Assemble:	  nasm -f elf64 -l main_asm.lst  main_asm.asm
 ; Link:		  gcc -m64 -o main_asm main_asm.o
 ; Run:		  ./main_asm
+; Реализовать целочисленные вычисления, сделанные в лабораторной работе №2,
+; полностью используя язык Ассемблера для организации корректного ввода-вывода информации:
+; Я взял 2 лабу для основы
 
 extern printf
 extern scanf

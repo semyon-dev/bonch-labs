@@ -1,3 +1,5 @@
+// Найти сколько элементов массива A={a[i]} удовлетворяет условию с <= a[i] <= d
+
 #include <stdio.h>
 #include <stdint.h>
 #include <stdlib.h>
