@@ -1,6 +1,6 @@
 #!/bin/bash
 echo 'Какую лабу запусить?'
-echo 'Доступны: 1, 2, 3, 4'
+echo 'Доступны: 1, 2, 3, 4, 5'
 echo '-----------------------------'
 read lab_number
 cd "lab$lab_number"
@@ -58,6 +58,15 @@ case ${lab_number} in
         ${PWD}/bin64
         echo '-----------------------------'
         echo 'Скомпилированный бинарник: bin64'
+        ;;
+    5)
+        gcc -m32 -fPIE main.c -c -o main.o
+        nasm -f elf main_asm.asm -o main_asm.o
+        gcc -m32 main.o main_asm.o -o bin32
+        rm main.o main_asm.o
+        ${PWD}/bin32
+        echo '-----------------------------'
+        echo 'Скомпилированный бинарник: bin32'
         ;;
     *)
         echo 'Такого варианта нет'

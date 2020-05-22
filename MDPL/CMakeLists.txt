@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.15)
 project(MDPL C ASM_NASM)
 set(CMAKE_C_STANDARD 11)
-set(CMAKE_ASM_NASM_OBJECT_FORMAT elf64)
+set(CMAKE_ASM_NASM_OBJECT_FORMAT elf)
 enable_language(ASM_NASM)
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -no-pie")
-# 4 лаба:
-set_source_files_properties(lab4/main_asm.asm PROPERTIES LANGUAGE ASM_NASM)
-add_executable(MDPL lab4/main.c lab4/main_asm.asm)
+# 5 лаба:
+set_source_files_properties(lab5/main_asm.asm PROPERTIES LANGUAGE ASM_NASM)
+add_executable(MDPL lab5/main.c lab5/main_asm.asm)
 target_link_libraries(MDPL m)
