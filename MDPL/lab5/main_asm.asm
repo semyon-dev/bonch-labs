@@ -16,23 +16,18 @@ ASMCalc:
 	;вторая часть
     fild dword [c_i]    ; загрузка в вершину стека
 
- ;   mov eax, [b_f]
-   ; push eax
-  ;  fld dword [esp]
-	;pop eax
-    fmul dword [b_f]                    ;c*b
+    fmul dword [b_f]        ;c*b
 
 	mov eax, 2d
     push eax
 	fild dword [esp]
 	pop eax
-	fdiv                     ;[c*b] / 2
+	fdiv            ;[c*b] / 2
 
 	mov eax, 1d
     push eax
     fild dword [esp]
 	pop eax
-;	fxch st1
 	fadd  ; 1+
 
 	fstp dword [result_f]
@@ -44,26 +39,17 @@ ASMCalc:
 	fild dword [esp]
 	pop eax
 
-;	mov eax, [a_f]
-;	push eax
-;	fld dword [esp]
-;	pop eax
-	;fdiv  ; -74/a
-	fdiv dword [a_f]
+	fdiv dword [a_f]  ; -74/a
 
-;	mov eax, [c_i]
-;	push eax
 	fild dword [c_i]
-;	pop eax
-	fadd
+	fadd         ; + c
 
 	mov eax, 5d
     push eax
     fild dword [esp]
     pop eax
-	fsub
+	fsub  ; -5
 
 	fdiv dword [result_f]
-
 	fstp dword [result_f]
 ret
