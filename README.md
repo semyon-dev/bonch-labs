@@ -5,6 +5,7 @@ My labs from Bonch (SPBGUT)
 * MDPL - Machine-dependent programming languages (Машинно-зависимые языки программирования)
 * AFSE - Algorithmic foundations of software engineering (Алгоритмические основы программной инженерии)
 * Programming (Программирование)
+* Coursework (Курсовая работа по программированию)
 
 ## Variant
 Все лабы сделаны для 17 варианта
