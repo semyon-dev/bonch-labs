@@ -68,6 +68,8 @@ func main() {
 	fmt.Println("метод касательныx: ", <-chan1)
 	go compatible(chan1) // комбинированный метод
 	fmt.Println("комбинированный метод: ", <-chan1)
+
+	close(chan1)
 }
 
 // метод касательных (Ньютона)
