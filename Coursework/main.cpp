@@ -2,6 +2,7 @@
 #include <cmath>
 #include <fstream>
 #include <climits>
+#include <string>
 
 using namespace std;
 
@@ -46,6 +47,7 @@ double input_formula(double t) {
     return 0;
 }
 
+// пункт B и C
 double calc(uint64_t step, double &t_middle) {
 
     double dt = (t_end - t_start) / step;
@@ -102,6 +104,15 @@ void draw(const string &path_graph) {
 
 int main() {
     setbuf(stdout, NULL);
+    string line;
+    ifstream in("intro.txt"); // окрываем файл для чтения
+    if (in.is_open()) {
+        while (getline(in, line)) {
+            cout << line << endl;
+        }
+    }
+    in.close();     // закрываем файл
+
     uint64_t n_custom = 0; // колличество интервалов времени
     cout << "Введите колличество интервалов времени: ";
     cin.exceptions(istream::failbit | istream::badbit);
