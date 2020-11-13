@@ -4,10 +4,10 @@
 	         AnyLogic Project File 
 *************************************************	         
 -->
-<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.5.2.202001241931" AlpVersion="8.5.1">
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.6.0.202008201535" AlpVersion="8.5.7">
 <Model>
 	<Id>1600064983207</Id>
-	<Name><![CDATA[Model1]]></Name>
+	<Name><![CDATA[lab2]]></Name>
 	<EngineVersion>6</EngineVersion>
 	<JavaPackageName><![CDATA[model1]]></JavaPackageName>
 	<ModelTimeUnit><![CDATA[Second]]></ModelTimeUnit>
@@ -125,7 +125,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1600066748738</Id>
 					<Name><![CDATA[vsrvt]]></Name>
-					<X>480</X><Y>120</Y>
+					<X>460</X><Y>120</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -137,7 +137,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1600066750084</Id>
 					<Name><![CDATA[vro]]></Name>
-					<X>480</X><Y>160</Y>
+					<X>460</X><Y>160</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -149,7 +149,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1600766113698</Id>
 					<Name><![CDATA[a]]></Name>
-					<X>670</X><Y>80</Y>
+					<X>660</X><Y>90</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -185,7 +185,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1600766121402</Id>
 					<Name><![CDATA[st]]></Name>
-					<X>680</X><Y>210</Y>
+					<X>670</X><Y>210</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -197,7 +197,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1600766123809</Id>
 					<Name><![CDATA[T]]></Name>
-					<X>680</X><Y>250</Y>
+					<X>670</X><Y>250</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -212,14 +212,14 @@
 					<X>105</X><Y>60</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>false</PresentationFlag>
+					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
 						<Type><![CDATA[double]]></Type>
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[1.1]]></Code>
+							<Code><![CDATA[2.1]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1600065055620</Id>
@@ -243,7 +243,7 @@
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[0.313]]></Code>
+							<Code><![CDATA[0.647]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1600065058197</Id>
@@ -267,7 +267,7 @@
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[1.1]]></Code>
+							<Code><![CDATA[2.5]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1600065059680</Id>
@@ -291,7 +291,7 @@
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[0.14]]></Code>
+							<Code><![CDATA[0.6]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1600065061043</Id>
@@ -639,6 +639,7 @@
 						<Parameter>
 							<Name><![CDATA[newEntity]]></Name>
 							<Value Class="EntityCodeValue">
+								<IsAgentEntity>true</IsAgentEntity>
 								<EntityEmbeddedObject>
 									<ActiveObjectClass>
 										<PackageName><![CDATA[model1]]></PackageName>
@@ -1595,6 +1596,7 @@ T=delivt.mean();]]></Code>
 				<FinalDate><![CDATA[1602633600000]]></FinalDate>	
 				<FinalTime><![CDATA[100.0]]></FinalTime>	
 			</ModelTimeProperties>
+			<BypassInitialScreen>false</BypassInitialScreen>
 		</SimulationExperiment>
 		<!--   =========  Optimization Experiment   ========  -->
 		<OptimizationExperiment ActiveObjectClassId="1600064983213">
@@ -1641,7 +1643,7 @@ datasetBestFeasibleObjective.reset();
 					<ShowLabel>true</ShowLabel>
 					<AutoUpdate>true</AutoUpdate>
 					<OccurrenceAtTime>true</OccurrenceAtTime>
-					<OccurrenceDate>1600848000000</OccurrenceDate>
+					<OccurrenceDate>1601971200000</OccurrenceDate>
 					<OccurrenceTime Class="CodeUnitValue">
 						<Code><![CDATA[0]]></Code>
 						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
@@ -1664,7 +1666,7 @@ datasetBestFeasibleObjective.reset();
 					<ShowLabel>true</ShowLabel>
 					<AutoUpdate>false</AutoUpdate>
 					<OccurrenceAtTime>true</OccurrenceAtTime>
-					<OccurrenceDate>1600848000000</OccurrenceDate>
+					<OccurrenceDate>1601971200000</OccurrenceDate>
 					<OccurrenceTime Class="CodeUnitValue">
 						<Code><![CDATA[0]]></Code>
 						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
@@ -1687,7 +1689,7 @@ datasetBestFeasibleObjective.reset();
 					<ShowLabel>true</ShowLabel>
 					<AutoUpdate>false</AutoUpdate>
 					<OccurrenceAtTime>true</OccurrenceAtTime>
-					<OccurrenceDate>1600848000000</OccurrenceDate>
+					<OccurrenceDate>1601971200000</OccurrenceDate>
 					<OccurrenceTime Class="CodeUnitValue">
 						<Code><![CDATA[0]]></Code>
 						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
@@ -1737,7 +1739,7 @@ datasetBestFeasibleObjective.reset();
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-12566464</Color>
-					<Text><![CDATA[Текущее]]></Text>
+					<Text><![CDATA[Current]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>12</Size>
@@ -1758,7 +1760,7 @@ datasetBestFeasibleObjective.reset();
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-12566464</Color>
-					<Text><![CDATA[Лучшее]]></Text>
+					<Text><![CDATA[Best]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>12</Size>
@@ -1803,7 +1805,7 @@ datasetBestFeasibleObjective.reset();
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-12171190</Color>
-					<Text><![CDATA[Итерация:]]></Text>
+					<Text><![CDATA[Iterations completed:]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>12</Size>
@@ -1848,7 +1850,7 @@ datasetBestFeasibleObjective.reset();
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-65536</Color>
-					<Text><![CDATA[недопуст.]]></Text>
+					<Text><![CDATA[infeasible]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>10</Size>
@@ -1893,7 +1895,7 @@ datasetBestFeasibleObjective.reset();
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-65536</Color>
-					<Text><![CDATA[недопуст.]]></Text>
+					<Text><![CDATA[infeasible]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>10</Size>
@@ -1936,7 +1938,7 @@ datasetBestFeasibleObjective.reset();
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-12171190</Color>
-					<Text><![CDATA[Функционал:]]></Text>
+					<Text><![CDATA[Objective:]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>12</Size>
@@ -2056,7 +2058,7 @@ datasetBestFeasibleObjective.reset();
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-12566464</Color>
-					<Text><![CDATA[Параметры]]></Text>
+					<Text><![CDATA[Parameters]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>12</Size>
@@ -2189,12 +2191,12 @@ datasetBestFeasibleObjective.reset();
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
-					<Color>-12171190</Color>
+					<Color>-12490271</Color>
 					<Text><![CDATA[src_p2]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>12</Size>
-						<Style>0</Style>
+						<Style>1</Style>
 					</Font>
 					<Alignment>LEFT</Alignment>
 				</Text>
@@ -2217,7 +2219,7 @@ datasetBestFeasibleObjective.reset();
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>12</Size>
-						<Style>0</Style>
+						<Style>1</Style>
 					</Font>
 					<Alignment>RIGHT</Alignment>
 				</Text>
@@ -2234,13 +2236,13 @@ datasetBestFeasibleObjective.reset();
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
-					<Color>-12042869</Color>
+					<Color>-12490271</Color>
 					<Text><![CDATA[?]]></Text>
-					<TextCode><![CDATA[format( src_p2 )]]></TextCode>
+					<TextCode><![CDATA[format( getBestParamValue( _oqvar_src_p2 ) )]]></TextCode>
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>12</Size>
-						<Style>0</Style>
+						<Style>1</Style>
 					</Font>
 					<Alignment>RIGHT</Alignment>
 				</Text>
@@ -2417,7 +2419,7 @@ datasetBestFeasibleObjective.reset();
 						<EnableExpression><![CDATA[getBestIteration() > 0]]></EnableExpression>
 						<ActionCode><![CDATA[String s = "";
 s += "src_p1\t" + format( src_p1 ) + "\n";
-s += "src_p2\t" + format( src_p2 ) + "\n";
+s += "src_p2\t" + format( getBestParamValue( _oqvar_src_p2 ) ) + "\n";
 s += "srv_p1\t" + format( srv_p1 ) + "\n";
 s += "srv_p2\t" + format( srv_p2 ) + "\n";
 
@@ -2453,8 +2455,8 @@ copyToClipboard( s );]]></ActionCode>
 					<Dz>0</Dz>
 				</Line>
     			<Plot>
-					<Id>1600765867764</Id>
-					<Name><![CDATA[plot]]></Name>
+					<Id>1601970191028</Id>
+					<Name><![CDATA[plot1]]></Name>
 					<X>370</X><Y>80</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
@@ -2463,7 +2465,7 @@ copyToClipboard( s );]]></ActionCode>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<AutoUpdate>false</AutoUpdate>
 					<OccurrenceAtTime>true</OccurrenceAtTime>
-					<OccurrenceDate>1600848000000</OccurrenceDate>
+					<OccurrenceDate>1601971200000</OccurrenceDate>
 					<OccurrenceTime Class="CodeUnitValue">
 						<Code><![CDATA[0]]></Code>
 						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
@@ -2503,7 +2505,7 @@ copyToClipboard( s );]]></ActionCode>
 					<DrawLine>true</DrawLine>
 					<Interpolation>LINEAR</Interpolation>
 					<DatasetExpression>  
-						<Title><![CDATA[Текущее]]></Title>
+						<Title><![CDATA[Current]]></Title>
 					<Expression><![CDATA[datasetCurrentObjective]]></Expression>
 					<Color>-4144960</Color>
 					<Expression2Flag>false</Expression2Flag>
@@ -2512,7 +2514,7 @@ copyToClipboard( s );]]></ActionCode>
 						<HorizontalAxisExpression><![CDATA[]]></HorizontalAxisExpression>
 					</DatasetExpression>
 					<DatasetExpression>  
-						<Title><![CDATA[Лучшее недопустимое]]></Title>
+						<Title><![CDATA[Best infeasible]]></Title>
 					<Expression><![CDATA[datasetBestInfeasibleObjective]]></Expression>
 					<Color>-4194304</Color>
 					<Expression2Flag>false</Expression2Flag>
@@ -2521,7 +2523,7 @@ copyToClipboard( s );]]></ActionCode>
 						<HorizontalAxisExpression><![CDATA[]]></HorizontalAxisExpression>
 					</DatasetExpression>
 					<DatasetExpression>  
-						<Title><![CDATA[Лучшее допустимое]]></Title>
+						<Title><![CDATA[Best feasible]]></Title>
 					<Expression><![CDATA[datasetBestFeasibleObjective]]></Expression>
 					<Color>-16777088</Color>
 					<Expression2Flag>false</Expression2Flag>
@@ -2544,11 +2546,14 @@ copyToClipboard( s );]]></ActionCode>
 				<Id>1600065058199</Id>
 				<Type>CONTINUOUS</Type>
 				<Min Class="CodeValue">
-					<Code><![CDATA[0.1]]></Code>
+					<Code><![CDATA[0.2]]></Code>
 				</Min>
 				<Max Class="CodeValue">
-					<Code><![CDATA[1]]></Code>
+					<Code><![CDATA[12]]></Code>
 				</Max>
+				<Suggested Class="CodeValue">
+					<Code><![CDATA[0.2]]></Code>
+				</Suggested>
 			</Parameter>
 			<Parameter>	
 				<Id>1600065059682</Id>
@@ -2557,8 +2562,11 @@ copyToClipboard( s );]]></ActionCode>
 			<Parameter>	
 				<Id>1600065061045</Id>
 				<Type>FIXED</Type>
+				<Value Class="CodeValue">
+					<Code><![CDATA[0.6]]></Code>
+				</Value>
 			</Parameter>
-			<ObjectiveFunctionCode><![CDATA[abs(root.vro-0.7)]]></ObjectiveFunctionCode>
+			<ObjectiveFunctionCode><![CDATA[abs(root.vro-0.84)]]></ObjectiveFunctionCode>
 			<Objective>MINIMIZE</Objective>
 			<AfterIterationCode><![CDATA[if (isBestSolutionFeasible()) {
 	datasetBestFeasibleObjective.update();
@@ -2590,8 +2598,8 @@ if (bestInfeasibleObjective != Double.POSITIVE_INFINITY) {
 				<StopOption><![CDATA[Stop at specified time]]></StopOption>
 				<InitialDate><![CDATA[1600041600000]]></InitialDate>	
 				<InitialTime><![CDATA[0.0]]></InitialTime>	
-				<FinalDate><![CDATA[1602633600000]]></FinalDate>	
-				<FinalTime><![CDATA[100.0]]></FinalTime>	
+				<FinalDate><![CDATA[1600041650000]]></FinalDate>	
+				<FinalTime><![CDATA[50.0]]></FinalTime>	
 				<StopAfterIterationCount>true</StopAfterIterationCount>
 				<IterationCount>500</IterationCount>
 				<AutomaticStop>false</AutomaticStop>
@@ -2603,6 +2611,12 @@ if (bestInfeasibleObjective != Double.POSITIVE_INFINITY) {
 		<VersionMajor>8</VersionMajor>
 		<VersionMinor>0</VersionMinor>
 		<VersionBuild>5</VersionBuild>
+    </RequiredLibraryReference>
+    <RequiredLibraryReference>
+		<LibraryName><![CDATA[com.anylogic.libraries.modules.markup_descriptors]]></LibraryName>
+		<VersionMajor>1</VersionMajor>
+		<VersionMinor>0</VersionMinor>
+		<VersionBuild>0</VersionBuild>
     </RequiredLibraryReference>
 </Model>
 </AnyLogicWorkspace>

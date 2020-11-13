@@ -4,7 +4,7 @@
 	         AnyLogic Project File 
 *************************************************	         
 -->
-<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.6.0.202008201535" AlpVersion="8.5.7">
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.6.0.202008201530" AlpVersion="8.5.7">
 <Model>
 	<Id>1601366336236</Id>
 	<Name><![CDATA[lab3]]></Name>
@@ -135,7 +135,7 @@
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[0.9]]></Code>
+							<Code><![CDATA[0.34]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1601366383395</Id>
