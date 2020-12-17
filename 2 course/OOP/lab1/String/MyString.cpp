@@ -4,7 +4,7 @@
 #include <iostream>
 #include "MyString.hpp"
 
-// получить длину с учетом нулевым символом
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 size_t CStrLength(const char *str) {
     size_t len = 0;
     while (true) {
@@ -14,19 +14,19 @@ size_t CStrLength(const char *str) {
     }
 }
 
-// очистка консоли
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 void clearStdin() {
     int c;
     while ((c = fgetc(stdin)) != EOF && c != '\n');
 }
 
-// оператор вывода
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 std::ostream &operator<<(std::ostream &out, const MyString &str) {
     out << str.c_str();
     return out;
 }
 
-// конструктор по умолчанию
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 MyString::MyString() {
     str = new char[5];
     capacity = 5;
@@ -34,7 +34,7 @@ MyString::MyString() {
     str[0] = '\0';
 }
 
-// конструктор с параметром
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 MyString::MyString(const char *str) {
     size_t len = CStrLength(str);
     this->str = new char[len];
@@ -43,7 +43,7 @@ MyString::MyString(const char *str) {
     capacity = len;
 }
 
-// конструктор копии
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 MyString::MyString(MyString &str) {
     this->str = new char[str.size + 1];
     strcat(this->str, str.str);
@@ -51,7 +51,7 @@ MyString::MyString(MyString &str) {
     capacity = str.size + 1;
 }
 
-// конструктор перемещения
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 MyString::MyString(MyString &&str) noexcept {
     this->str = str.str;
     str.str = nullptr;
@@ -59,12 +59,12 @@ MyString::MyString(MyString &&str) noexcept {
     this->capacity = str.capacity;
 }
 
-// деструктор
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 MyString::~MyString() {
     delete[] str;
 }
 
-// увеличивает место в массиве для строки
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 void MyString::reserve(size_t size) {
     if (capacity >= size)
         return;
@@ -78,22 +78,22 @@ void MyString::reserve(size_t size) {
     str = sub_str;
 }
 
-// возвращает си строку
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 const char *MyString::c_str() const {
     return str;
 }
 
-// доступ к строке
+// пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 char MyString::operator[](size_t i) const {
     return str[i];
 }
 
-// получение длинны
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 size_t MyString::length() const {
     return size;
 }
 
-// копирование строк
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 void MyString::copy(const MyString &str) {
     size_t len = str.size + 1;
 
@@ -108,7 +108,7 @@ void MyString::copy(const MyString &str) {
     size = len - 1;
 }
 
-// копирование строк на основе си строки
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 void MyString::copy(const char *str) {
     size_t len = CStrLength(str);
 
@@ -124,7 +124,7 @@ void MyString::copy(const char *str) {
     size = len - 1;
 }
 
-// получние подстроки (index - откуда, count - кол-во)
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ (index - пїЅпїЅпїЅпїЅпїЅпїЅ, count - пїЅпїЅпїЅ-пїЅпїЅ)
 MyString MyString::subStr(size_t index, size_t count) const {
     MyString string;
     string.reserve(count + 1);
@@ -138,7 +138,7 @@ MyString MyString::subStr(size_t index, size_t count) const {
     return string;
 }
 
-// вырезать подстроку
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 void MyString::remove(size_t index, size_t count) {
     for (size_t i = index; i + count < size + 1; i++) {
         str[i] = str[i + count];
@@ -146,43 +146,43 @@ void MyString::remove(size_t index, size_t count) {
     size -= count;
 }
 
-// вставить подстроку
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 void MyString::insert(const char *str, size_t index) {
     size_t len = CStrLength(str) - 1;
     reserve(size + len + 1);
 
-    //сдвиг текста ->
+    //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ ->
     for (size_t i = size; i >= index; i--) {
         this->str[i + len] = this->str[i];
     }
 
-    //вставка
+    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     for (size_t i = 0; i < len; i++) {
         this->str[i + index] = str[i];
     }
     size = size + len + 1;
 }
 
-//// удалить ведушие и завершающие пробелы
-//void MyString::trim() {
-//    // удаление ведущих
-//    for (size_t i = 0; i < size; i++) {
-//        if (str[i] != ' ') {
-//            remove(0, i);
-//            break;
-//        }
-//    }
-//
-//    // удаление завершающих
-//    for (size_t i = size - 1; i != -1; i--) {
-//        if (str[i] != ' ')
-//            break;
-//        size--;
-//        str[i] = '\0';
-//    }
-//}
+//// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+void MyString::trim() {
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    for (size_t i = 0; i < size; i++) {
+        if (str[i] != ' ') {
+            remove(0, i);
+            break;
+        }
+    }
 
-// считать с консоли
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    for (size_t i = size - 1; i != -1; i--) {
+        if (str[i] != ' ')
+            break;
+        size--;
+        str[i] = '\0';
+    }
+}
+
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 void MyString::read() {
     constexpr size_t buf_size = 10;
     char *text = reinterpret_cast<char *>(calloc(1, 1)), buffer[buf_size];
@@ -213,7 +213,7 @@ void MyString::read() {
     copy(text);
 }
 
-// печать строки
+// пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 void MyString::print() {
     printf("%s", str);
 }

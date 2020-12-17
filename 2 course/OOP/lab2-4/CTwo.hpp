@@ -20,7 +20,7 @@ public:
 
     const COne *getCOne() const;
 
-    void print() const;
+    virtual void print() const;
 
 private:
     COne *p;

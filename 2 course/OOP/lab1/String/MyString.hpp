@@ -20,7 +20,7 @@ public:
 
     const MyString &operator=(const MyString &str) = delete;
 
-    //условие
+    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     size_t length() const;
 
     void copy(const MyString &str);
@@ -33,8 +33,9 @@ public:
 
     void insert(const char *str, size_t index);
 
-    void read(); //считать с консоли
+    void read(); //пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     void print();
+    void trim();
 
 private:
     char *str;
