@@ -42,7 +42,8 @@ private:
 
 template<typename T>
 List<T>::List(): first(nullptr), last(nullptr) {
-
+    this->first = nullptr;
+    this->last = nullptr;
 }
 
 template<typename T>
@@ -55,7 +56,7 @@ List<T>::List(const T *arr, size_t count): first(nullptr), last(nullptr) {
 template<typename T>
 List<T>::List(const List &l) {
     if (l.first == nullptr) {
-        throw "пустой список";
+        return;
     }
     auto current = l.first;
     while (current != nullptr) {
@@ -72,7 +73,6 @@ List<T>::~List() {
         current = current->next;
     }
 }
-
 
 template<typename T>
 void List<T>::pushFront(const T &elem) {
@@ -105,7 +105,8 @@ void List<T>::pushBack(const T &elem) {
 template<typename T>
 void List<T>::print() {
     if (this->first == nullptr) {
-        throw "пустой список";
+        return;
+//        throw "пустой список";
     }
     cout << this->first->data;
     cout << " ";
