@@ -15,6 +15,10 @@ My labs from Bonch (SPBGUT)
 * OOP (Object-oriented programming)
 * AnyLogic (Mathematical models in communication networks)
 
+### 4 course (4 курс)
+
+* Математические методы и вычислительные алгоритмы современных систем связи
+
 ## Variant
 
 Все лабы 1 курса сделаны для 17 варианта
